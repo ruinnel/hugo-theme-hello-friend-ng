@@ -3,11 +3,20 @@
 ![Hello Friend NG](https://dsh.re/d27822)
 
 
-
 ## General informations
 
-This theme was highly inspired by the [hello-friend](https://github.com/panr/hugo-theme-hello-friend) and [hermit](https://github.com/Track3/hermit).
+This theme was highly inspired by the [hello-friend](https://github.com/panr/hugo-theme-hello-friend) and [hermit](https://github.com/Track3/hermit). `+ support mermaid.js`
 
+## mermaid.js usage.
+```
+{{< mermaid align="left" >}}
+graph LR;
+    A[Hard edge] -->|Link text| B(Round edge)
+    B --> C{Decision}
+    C -->|One| D[Result one]
+    C -->|Two| E[Result two]
+{{< /mermaid >}}
+```
 
 ## Features
 
