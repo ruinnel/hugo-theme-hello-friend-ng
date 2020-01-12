@@ -3,7 +3,7 @@
 {{ $prism := resources.Get "js/prism.js" }}
 {{ $theme := resources.Get "js/theme.js" }}
 {{ $mermaid := resources.Get "js/mermaid.js" }}
-{{ $secureJS := slice $main $menu $prism $theme $mermaid | resources.Concat "bundle.js" | resources.Minify | resources.Fingerprint "sha512" }}
+{{ $secureJS := slice $main $menu $prism $mermaid $theme | resources.Concat "bundle.js" | resources.Minify | resources.Fingerprint "sha512" }}
 <script type="text/javascript" src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
 
 {{- if .Site.GoogleAnalytics }}
@@ -22,3 +22,11 @@
 		<script src="{{ $val }}"></script>
 	{{ end }}
 {{ end }}
+
+<script>
+    function initMermaid() {
+        var config = { theme: 'dark' };
+        mermaid.initialize(config);
+    }
+    initMermaid();
+</script>
